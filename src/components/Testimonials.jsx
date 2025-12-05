@@ -7,7 +7,7 @@ const Testimonials = () => {
     const { t } = useLanguage();
 
     React.useEffect(() => {
-        document.title = "Testimonials | My Loan Partner";
+        document.title = "My Loan Partner";
     }, []);
 
     const testimonials = t.testimonials.items.map((item, index) => ({

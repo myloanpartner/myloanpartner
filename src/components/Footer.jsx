@@ -57,7 +57,7 @@ const Footer = () => {
 
                         <div className="contact-item">
                             <span className="label">{t.footer.sendEmail}</span>
-                            <a href="mailto:support@myloanpartner.in" className="value">support@myloanpartner.in</a>
+                            <a href="mailto:team@myloanpartner.in" className="value">team@myloanpartner.in</a>
                         </div>
 
                         <div className="contact-item">

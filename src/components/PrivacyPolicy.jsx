@@ -189,7 +189,7 @@ const PrivacyPolicy = () => {
                     <h2>Contact Us</h2>
                     <p>If you have any questions about this Privacy Policy, You can contact us:</p>
                     <ul>
-                        <li><p>By email: support@myloanpartner.in</p></li>
+                        <li><p>By email: team@myloanpartner.in</p></li>
                         <li><p>By phone: +91 9080754536</p></li>
                     </ul>
                 </motion.div>
