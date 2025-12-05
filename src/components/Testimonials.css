@@ -1,0 +1,111 @@
+.testimonials-page {
+    padding-top: 120px;
+    min-height: 80vh;
+    overflow: hidden;
+    /* Prevent horizontal scrollbar on the page itself */
+}
+
+.testimonials-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 3rem;
+    /* Gradient mask for smooth fade in/out edges */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    padding: 2rem 0;
+    /* Add padding for shadow/hover space */
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    /* Adjust duration based on content length for natural speed */
+    animation: scroll 60s linear infinite;
+    padding-left: 2rem;
+    /* Initial offset */
+}
+
+/* Pause animation on hover for reading */
+.testimonials-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move by 1/3rd because we triplicated the items. 
+           This ensures a seamless loop when the first set finishes. */
+        transform: translateX(calc(-100% / 3));
+    }
+}
+
+.testimonial-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    /* Fixed width for consistent flow */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-gold), var(--color-red));
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-gold);
+    /* Highlight effect on hover */
+    z-index: 10;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.testimonial-author h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.testimonial-author span {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: var(--color-gold);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-family: serif;
+    line-height: 1;
+}

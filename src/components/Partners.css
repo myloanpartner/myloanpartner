@@ -1,0 +1,141 @@
+.partners-section {
+    background-color: var(--bg-color);
+    padding: 2rem 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.partners-container {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Center spotlight effect */
+.partners-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 120%;
+    background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Fade edges */
+.partners-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right,
+            var(--bg-color) 0%,
+            transparent 15%,
+            transparent 85%,
+            var(--bg-color) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+    position: relative;
+    z-index: 0;
+}
+
+.partner-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 140px;
+    height: 85px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+.partner-logo {
+    height: 32px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+.partner-name {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* Center highlight effect - automatically applied when logo is in center */
+.partner-item.center-highlight {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: #10b981;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6),
+        0 0 60px rgba(16, 185, 129, 0.3);
+}
+
+.partner-item.center-highlight .partner-logo {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+}
+
+.partner-item.center-highlight .partner-name {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+}
+
+/* Hover effect */
+.partner-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.partner-item:hover .partner-logo {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+}
+
+.partner-item:hover .partner-name {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .partners-container::before {
+        width: 150px;
+    }
+}

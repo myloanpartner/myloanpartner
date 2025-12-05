@@ -1,0 +1,132 @@
+.services {
+    padding-top: 120px;
+    /* Account for fixed navbar */
+    min-height: 80vh;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, box-shadow;
+    box-shadow: var(--glass-shadow);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 109, 119, 0.2);
+    border-color: var(--accent-color);
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 109, 119, 0.4);
+    animation: pulse-glow 2s infinite;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.service-details {
+    margin-bottom: 2rem;
+}
+
+.service-details li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.check-icon {
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.apply-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-top: auto;
+    transition: gap 0.3s ease;
+}
+
+.apply-link:hover {
+    gap: 0.8rem;
+}
+
+.service-tag {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(0, 191, 165, 0.5);
+    animation: tag-pulse 2s infinite;
+}
+
+@keyframes tag-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(0, 191, 165, 0.5);
+    }
+
+    50% {
+        opacity: 0.8;
+        text-shadow: 0 0 20px rgba(0, 191, 165, 0.8);
+    }
+}

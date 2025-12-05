@@ -1,0 +1,523 @@
+/* Responsive Design Enhancements */
+
+/* Mobile First - Base Styles (already mobile-friendly) */
+
+/* Tablet Devices (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    [data-theme="light"] .hero {
+        padding: 100px 0 60px;
+    }
+
+    [data-theme="light"] .stat-card {
+        padding: 1.5rem;
+    }
+
+    [data-theme="light"] .service-card {
+        padding: 2rem;
+    }
+
+    [data-theme="light"] .calculator-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    [data-theme="light"] .calculator-inputs,
+    [data-theme="light"] .result-card {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+
+    /* Container & Spacing */
+    .container {
+        padding: 0 16px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    /* Hero Section - Mobile */
+    [data-theme="light"] .hero {
+        padding: 80px 0 40px;
+        min-height: auto;
+    }
+
+    [data-theme="light"] .hero-badge {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    [data-theme="light"] .hero-title {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    [data-theme="light"] .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    [data-theme="light"] .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    [data-theme="light"] .cta-button,
+    [data-theme="light"] .cta-secondary {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    [data-theme="light"] .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    [data-theme="light"] .stat-card {
+        padding: 1.25rem;
+    }
+
+    [data-theme="light"] .stat-value {
+        font-size: 1.75rem;
+    }
+
+    [data-theme="light"] .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Services Section - Mobile */
+    [data-theme="light"] .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    [data-theme="light"] .service-card {
+        padding: 1.5rem;
+    }
+
+    [data-theme="light"] .service-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    [data-theme="light"] .service-title {
+        font-size: 1.25rem;
+    }
+
+    [data-theme="light"] .service-desc {
+        font-size: 0.9rem;
+    }
+
+    [data-theme="light"] .service-details {
+        font-size: 0.85rem;
+    }
+
+    /* Partners Section - Mobile */
+    [data-theme="light"] .partners-section {
+        padding: 1.5rem 0;
+    }
+
+    [data-theme="light"] .partner-item {
+        min-width: 120px;
+        height: 75px;
+        padding: 0.75rem 1rem;
+    }
+
+    [data-theme="light"] .partner-logo {
+        height: 26px;
+        max-width: 80px;
+    }
+
+    [data-theme="light"] .partner-name {
+        font-size: 0.7rem;
+    }
+
+    [data-theme="light"] .partners-track {
+        gap: 1.5rem;
+    }
+
+    [data-theme="light"] .partners-container::before {
+        width: 120px;
+    }
+
+    /* Why Choose Us - Mobile */
+    [data-theme="light"] .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    [data-theme="light"] .feature-card {
+        padding: 1.5rem;
+    }
+
+    [data-theme="light"] .feature-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    [data-theme="light"] .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    [data-theme="light"] .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Calculator Section - Mobile */
+    [data-theme="light"] .calculator-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    [data-theme="light"] .calculator-inputs,
+    [data-theme="light"] .result-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    [data-theme="light"] .input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    [data-theme="light"] .input-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    [data-theme="light"] input[type="range"] {
+        height: 6px;
+    }
+
+    [data-theme="light"] .result-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    [data-theme="light"] .emi-value {
+        font-size: 1.75rem;
+    }
+
+    [data-theme="light"] .breakdown-item {
+        padding: 0.75rem 0;
+        font-size: 0.9rem;
+    }
+
+    [data-theme="light"] .download-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Contact Section - Mobile */
+    [data-theme="light"] .contact-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    [data-theme="light"] .contact-info,
+    [data-theme="light"] .contact-form {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    [data-theme="light"] .contact-details {
+        gap: 1.25rem;
+    }
+
+    [data-theme="light"] .detail-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    [data-theme="light"] .detail-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    [data-theme="light"] .detail-item h4 {
+        font-size: 1rem;
+    }
+
+    [data-theme="light"] .detail-item p {
+        font-size: 0.9rem;
+    }
+
+    [data-theme="light"] .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    [data-theme="light"] .form-group label {
+        font-size: 0.9rem;
+    }
+
+    [data-theme="light"] .form-group input,
+    [data-theme="light"] .form-group textarea {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+
+    [data-theme="light"] .submit-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    /* Section Headers - Mobile */
+    [data-theme="light"] .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    [data-theme="light"] .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* Navigation - Mobile */
+    [data-theme="light"] .navbar {
+        padding: 12px 0;
+    }
+
+    [data-theme="light"] .navbar.scrolled {
+        padding: 10px 0;
+    }
+
+    [data-theme="light"] .logo {
+        font-size: 1.25rem;
+    }
+
+    [data-theme="light"] .mobile-menu {
+        padding: 1rem 0;
+    }
+
+    [data-theme="light"] .mobile-nav-link {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    [data-theme="light"] .mobile-actions {
+        padding: 1rem 20px;
+        gap: 10px;
+    }
+
+    [data-theme="light"] .mobile-lang,
+    [data-theme="light"] .mobile-cta {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer - Mobile */
+    [data-theme="light"] .footer {
+        padding: 20px 0;
+        font-size: 0.85rem;
+    }
+
+    [data-theme="light"] .footer p {
+        line-height: 1.6;
+    }
+
+    /* Privacy Policy - Mobile */
+    [data-theme="light"] .privacy-policy-page {
+        padding: 100px 0 40px;
+    }
+
+    [data-theme="light"] .privacy-content {
+        padding: 1.5rem;
+    }
+
+    [data-theme="light"] .privacy-content h1 {
+        font-size: 1.75rem;
+    }
+
+    [data-theme="light"] .privacy-content h2 {
+        font-size: 1.35rem;
+        margin-top: 1.5rem;
+    }
+
+    [data-theme="light"] .privacy-content h3 {
+        font-size: 1.15rem;
+        margin-top: 1.25rem;
+    }
+
+    [data-theme="light"] .privacy-content p,
+    [data-theme="light"] .privacy-content li {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    [data-theme="light"] .back-link {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Theme Toggle - Mobile */
+    .theme-toggle {
+        top: 70px;
+        right: 16px;
+    }
+
+    /* WhatsApp Button - Mobile */
+    .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+    }
+
+    /* Reduce shadows on mobile for performance */
+    [data-theme="light"] .service-card,
+    [data-theme="light"] .feature-card,
+    [data-theme="light"] .stat-card,
+    [data-theme="light"] .calculator-inputs,
+    [data-theme="light"] .result-card,
+    [data-theme="light"] .contact-info,
+    [data-theme="light"] .contact-form {
+        box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08);
+    }
+
+    [data-theme="light"] .service-card:hover,
+    [data-theme="light"] .feature-card:hover {
+        box-shadow: 0 8px 24px rgba(79, 70, 229, 0.15);
+    }
+}
+
+/* Small Mobile Devices (up to 375px) */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    [data-theme="light"] .hero-title {
+        font-size: 1.5rem;
+    }
+
+    [data-theme="light"] .section-title {
+        font-size: 1.5rem;
+    }
+
+    [data-theme="light"] .service-card,
+    [data-theme="light"] .feature-card,
+    [data-theme="light"] .calculator-inputs,
+    [data-theme="light"] .result-card,
+    [data-theme="light"] .contact-info,
+    [data-theme="light"] .contact-form {
+        padding: 1.25rem;
+    }
+
+    [data-theme="light"] .partner-item {
+        min-width: 100px;
+        height: 70px;
+    }
+
+    [data-theme="light"] .partner-logo {
+        height: 24px;
+    }
+
+    [data-theme="light"] .partner-name {
+        font-size: 0.65rem;
+    }
+}
+
+/* Landscape Mobile Devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    [data-theme="light"] .hero {
+        padding: 60px 0 30px;
+    }
+
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    [data-theme="light"] .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Larger touch targets */
+    [data-theme="light"] .nav-link,
+    [data-theme="light"] .mobile-nav-link {
+        padding: 14px 20px;
+    }
+
+    [data-theme="light"] .cta-button,
+    [data-theme="light"] .cta-secondary,
+    [data-theme="light"] .submit-btn,
+    [data-theme="light"] .download-btn {
+        min-height: 48px;
+    }
+
+    /* Remove hover effects on touch devices */
+    [data-theme="light"] .service-card:hover,
+    [data-theme="light"] .feature-card:hover {
+        transform: none;
+    }
+
+    /* Simplify animations for better performance */
+    [data-theme="light"] * {
+        transition-duration: 0.2s !important;
+    }
+}
+
+/* High Resolution Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    [data-theme="light"] .partner-logo,
+    [data-theme="light"] .service-icon,
+    [data-theme="light"] .feature-icon {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="light"] * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    [data-theme="light"] .partners-track {
+        animation: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    [data-theme="light"] {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+    }
+
+    .theme-toggle,
+    .whatsapp-float,
+    .navbar,
+    .footer {
+        display: none !important;
+    }
+
+    [data-theme="light"] .service-card,
+    [data-theme="light"] .feature-card {
+        break-inside: avoid;
+    }
+}

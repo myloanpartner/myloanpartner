@@ -1,0 +1,132 @@
+.comparison-section {
+    background-color: var(--bg-color);
+}
+
+.table-container {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.comparison-grid {
+    display: grid;
+    min-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.grid-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background: linear-gradient(90deg, rgba(0, 191, 165, 0.1), rgba(79, 172, 254, 0.1));
+    padding: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 1.2rem 1.5rem;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.grid-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.grid-row:last-child {
+    border-bottom: none;
+}
+
+.feature-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.naveen-col,
+.naveen-cell {
+    text-align: center;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.bank-col,
+.bank-cell,
+.agent-col,
+.agent-cell {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.icon-check {
+    color: #10b981;
+    /* Green */
+}
+
+.icon-x {
+    color: #ef4444;
+    /* Red */
+}
+
+.icon-partial {
+    color: var(--gold);
+    /* Yellow/Gold */
+}
+
+@media (max-width: 768px) {
+
+    .grid-header,
+    .grid-row {
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+}
+
+@keyframes text-glow-blink {
+
+    0%,
+    100% {
+        text-shadow: 0 0 5px currentColor;
+        opacity: 1;
+    }
+
+    50% {
+        text-shadow: 0 0 20px currentColor;
+        opacity: 0.8;
+    }
+}
+
+@keyframes icon-glow-blink {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 2px currentColor);
+        opacity: 1;
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px currentColor);
+        opacity: 0.7;
+    }
+}
+
+.naveen-col {
+    animation: text-glow-blink 2s infinite ease-in-out;
+}
+
+.naveen-cell .icon-check {
+    animation: icon-glow-blink 2s infinite ease-in-out;
+}
