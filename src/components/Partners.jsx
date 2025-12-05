@@ -2,22 +2,22 @@ import React, { useEffect, useRef } from 'react';
 import './Partners.css';
 
 const partners = [
-    { name: "HDFC Bank", url: "https://netbanking.hdfcbank.com/netbanking/", domain: "hdfcbank.com" },
-    { name: "ICICI Bank", url: "https://infinity.icicibank.com/corp/Login.jsp", domain: "icicibank.com" },
-    { name: "Axis Bank", url: "https://retail.axisbank.co.in/wps/portal/rBanking/axisebanking/AxisRetailLogin", domain: "axisbank.com" },
-    { name: "SBI", url: "https://retail.onlinesbi.sbi/retail/login.htm", domain: "sbi.co.in" },
-    { name: "Kotak Mahindra Bank", url: "https://netbanking.kotak.com/knb2/", domain: "kotak.com" },
-    { name: "Bajaj Finserv", url: "https://www.bajajfinserv.in/", domain: "bajajfinserv.in" },
-    { name: "Tata Capital", url: "https://www.tatacapital.com/", domain: "tatacapital.com" },
-    { name: "Aditya Birla Capital", url: "https://www.adityabirlacapital.com/", domain: "adityabirlacapital.com" },
-    { name: "IDFC First Bank", url: "https://my.idfcfirstbank.com/login", domain: "idfcfirstbank.com" },
-    { name: "Yes Bank", url: "https://www.yesbank.in/digital-banking/internet-banking", domain: "yesbank.in" },
-    { name: "IndusInd Bank", url: "https://indusnet.indusind.com/", domain: "indusind.com" },
-    { name: "Fullerton India", url: "https://www.smfgindiacredit.com/", domain: "fullertonindia.com" },
-    { name: "L&T Finance", url: "https://www.ltfs.com/", domain: "ltfs.com" },
-    { name: "Piramal Finance", url: "https://www.piramalfinance.com/", domain: "piramalfinance.com" },
-    { name: "Hero Fincorp", url: "https://www.herofincorp.com/", domain: "herofincorp.com" },
-    { name: "Muthoot Finance", url: "https://www.muthootfinance.com/", domain: "muthootfinance.com" }
+    { name: "HDFC Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/hdfc-bank.svg", url: "https://netbanking.hdfcbank.com/netbanking/", domain: "hdfcbank.com" },
+    { name: "ICICI Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/icici-bank-1.svg", url: "https://infinity.icicibank.com/corp/Login.jsp", domain: "icicibank.com" },
+    { name: "Axis Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/axis-bank-logo.svg", url: "https://retail.axisbank.co.in/wps/portal/rBanking/axisebanking/AxisRetailLogin", domain: "axisbank.com" },
+    { name: "SBI", logoUrl: "https://cdn.worldvectorlogo.com/logos/state-bank-of-india.svg", url: "https://retail.onlinesbi.sbi/retail/login.htm", domain: "sbi.co.in" },
+    { name: "Kotak Mahindra Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/kotak-mahindra-bank-1.svg", url: "https://netbanking.kotak.com/knb2/", domain: "kotak.com" },
+    { name: "Bajaj Finserv", logoUrl: "https://cdn.worldvectorlogo.com/logos/bajaj-finserv.svg", url: "https://www.bajajfinserv.in/", domain: "bajajfinserv.in" },
+    { name: "Tata Capital", logoUrl: "https://cdn.worldvectorlogo.com/logos/tata-capital.svg", url: "https://www.tatacapital.com/", domain: "tatacapital.com" },
+    { name: "Aditya Birla Capital", logoUrl: "https://cdn.worldvectorlogo.com/logos/aditya-birla-capital.svg", url: "https://www.adityabirlacapital.com/", domain: "adityabirlacapital.com" },
+    { name: "IDFC First Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/idfc-first-bank.svg", url: "https://my.idfcfirstbank.com/login", domain: "idfcfirstbank.com" },
+    { name: "Yes Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/yes-bank.svg", url: "https://www.yesbank.in/digital-banking/internet-banking", domain: "yesbank.in" },
+    { name: "IndusInd Bank", logoUrl: "https://cdn.worldvectorlogo.com/logos/indusind-bank.svg", url: "https://indusnet.indusind.com/", domain: "indusind.com" },
+    { name: "Fullerton India", logoUrl: "https://cdn.worldvectorlogo.com/logos/fullerton-india.svg", url: "https://www.smfgindiacredit.com/", domain: "fullertonindia.com" },
+    { name: "L&T Finance", logoUrl: "https://cdn.worldvectorlogo.com/logos/l-t-finance-holdings.svg", url: "https://www.ltfs.com/", domain: "ltfs.com" },
+    { name: "Piramal Finance", logoUrl: "https://cdn.worldvectorlogo.com/logos/piramal-enterprises.svg", url: "https://www.piramalfinance.com/", domain: "piramalfinance.com" },
+    { name: "Hero Fincorp", logoUrl: "https://cdn.worldvectorlogo.com/logos/hero-fincorp.svg", url: "https://www.herofincorp.com/", domain: "herofincorp.com" },
+    { name: "Muthoot Finance", logoUrl: "https://cdn.worldvectorlogo.com/logos/muthoot-finance.svg", url: "https://www.muthootfinance.com/", domain: "muthootfinance.com" }
 ];
 
 const Partners = () => {
@@ -66,11 +66,17 @@ const Partners = () => {
                             title={partner.name}
                         >
                             <img
-                                src={`https://logo.clearbit.com/${partner.domain}`}
+                                src={partner.logoUrl}
                                 alt={partner.name}
                                 className="partner-logo"
                                 onError={(e) => {
-                                    e.target.style.display = 'none';
+                                    // Fallback to Clearbit if SVG fails
+                                    if (e.target.src !== `https://logo.clearbit.com/${partner.domain}`) {
+                                        e.target.src = `https://logo.clearbit.com/${partner.domain}`;
+                                    } else {
+                                        // If Clearbit also fails, hide image
+                                        e.target.style.display = 'none';
+                                    }
                                 }}
                             />
                             <span className="partner-name">{partner.name}</span>
