@@ -37,12 +37,14 @@ const Home = () => (
 );
 
 import ScrollToAnchor from './components/ScrollToAnchor';
+import MetaPixel from './components/MetaPixel';
 
 function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
         <div className="app">
+          <MetaPixel />
           <ScrollToAnchor />
           <Navbar />
           <Routes>
